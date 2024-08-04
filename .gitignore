@@ -1,2 +1,42 @@
-node_modules
+# Node modules
+/node_modules
+
+# Logs
 *.log
+
+# Environment variables
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Build output (if applicable)
+dist/
+build/
+
+# Vercel specific
+/.vercel
+
+# Temporary files
+*.swp
+*.swo
+
+# Dependency directories
+package-lock.json
+npm-debug.log
+
+# IDE settings
+.vscode/
+.idea/
+
+# Public files
+# You might not want to exclude the public directory if it contains necessary assets.
+# public/
+
+# Views folder
+# Ensure this is not excluded if you need it for deployment.
+# views/
+
+# Miscellaneous
+*.lock
