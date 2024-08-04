@@ -1,0 +1,52 @@
+[
+  {
+    "title": "The Shining",
+    "author": "Stephen King",
+    "available": true
+  },
+  {
+    "title": "Rainbow Six",
+    "author": "Tom Clancy",
+    "available": true
+  },
+  {
+    "title": "Steve Jobs",
+    "author": "Walter Isaacson",
+    "available": true
+  },
+  {
+    "title": "Elon Musk",
+    "author": "Ashley Vance",
+    "available": true
+  },
+  {
+    "title": "Moon of the Turning Leaves",
+    "author": "Waubgeshig Rice",
+    "available": true
+  },
+  {
+    "title": "Things We Left Behind",
+    "author": "Lucy Score",
+    "available": true
+  },
+  {
+    "title": "The Bittlemores",
+    "author": "Jann Arden",
+    "available": true
+  },
+  {
+    "title": "The Defector",
+    "author": "Chris Hadfield",
+    "available": true
+  },
+  {
+    "title": "King of Wrath",
+    "author": " Ana Huang",
+    "available": true
+  },
+  {
+    "title": "Fourth Wing",
+    "author": "Rebecca Yarros",
+    "available": true
+  }
+]
