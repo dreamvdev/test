@@ -9,18 +9,15 @@ const randomstring = require('randomstring');
 const app = express();
 
 app.engine(".hbs", exphbs.engine({
-    extname: ".hbs", 
+    extname: ".hbs",
     defaultLayout: false,
-    partialsDir: path.join(__dirname, 'views/partials') 
+    partialsDir: path.join(__dirname, 'views/partials')
 }));
 
 app.set("view engine", ".hbs");
 
-
 app.use(express.urlencoded({ extended: true }));
-
 app.use(express.static('public'));
-
 
 app.use(session({
     secret: randomstring.generate(32),
@@ -30,11 +27,11 @@ app.use(session({
 }));
 
 app.get("/", function(req, res){
-    res.render('landing', {});                                               
+    res.render('landing', {});
 });
 
 app.get("/signin", function(req, res){
-    res.render('signin', { title: 'Sign In' });                                               
+    res.render('signin', { title: 'Sign In' });
 });
 
 app.post('/signin', (req, res) => {
@@ -49,7 +46,6 @@ app.post('/signin', (req, res) => {
         return res.render('signin', { title: 'Sign In', error: 'Invalid password' });
     }
 
-    
     req.session.username = username;
     req.session.sessionID = randomstring.generate(32);
 
