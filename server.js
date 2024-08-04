@@ -35,22 +35,28 @@ app.get("/signin", function(req, res){
 });
 
 app.post('/signin', (req, res) => {
-    const { username, password } = req.body;
-    const users = JSON.parse(fs.readFileSync('users.json', 'utf8'));
+    try {
+        const { username, password } = req.body;
+        const users = JSON.parse(fs.readFileSync('users.json', 'utf8'));
 
-    if (!users[username]) {
-        return res.render('signin', { title: 'Sign In', error: 'Not a registered username' });
+        if (!users[username]) {
+            return res.render('signin', { title: 'Sign In', error: 'Not a registered username' });
+        }
+
+        if (users[username] !== password) {
+            return res.render('signin', { title: 'Sign In', error: 'Invalid password' });
+        }
+
+        req.session.username = username;
+        req.session.sessionID = randomstring.generate(32);
+
+        res.redirect(`/home`);
+    } catch (error) {
+        console.error('Error in /signin:', error);
+        res.status(500).send('Internal Server Error');
     }
-
-    if (users[username] !== password) {
-        return res.render('signin', { title: 'Sign In', error: 'Invalid password' });
-    }
-
-    req.session.username = username;
-    req.session.sessionID = randomstring.generate(32);
-
-    res.redirect(`/home`);
 });
+
 
 app.get("/home", (req, res) => {
     if (!req.session.username) {
